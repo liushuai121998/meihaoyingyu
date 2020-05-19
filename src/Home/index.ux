@@ -6,7 +6,6 @@
     <div class="title">
       <image class="title__icon" src="/Common/title-icon.png"></image>
       <image class="title__sub-icon" src="/Common/title-sub-icon.png"></image>
-      <image class="title__image" src="/Common/main-logo.png"></image>
     </div>
     <div class="main">
       <div class="content">
