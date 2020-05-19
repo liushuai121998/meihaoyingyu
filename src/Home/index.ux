@@ -14,7 +14,8 @@
           <list class="content-item" onlongpress="longPress(item)">
             <list-item type="content-reply" class="content__reply">
               <text class="time">{{dateNow}}</text>
-              <text>{{item.content}}</text>
+              <text>{{item.en}}</text>
+              <text>{{item.zh}}</text>
             </list-item>
           </list>
           <div class="content__copy" onlongpress="longPress(item)">
