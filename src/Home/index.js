@@ -2,6 +2,8 @@ import router from '@system.router'
 import clipboard from '@system.clipboard'
 import prompt from '@system.prompt'
 import ad from '@service.ad'
+import audio from '@system.audio'
+import media from '@system.media'
 export default Custom_page({
   // 页面级组件的数据模型，影响传入数据的覆盖机制：private内定义的属性不允许被覆盖
   private: {
@@ -20,16 +22,33 @@ export default Custom_page({
   },
   async getData() {
     const $appDef = this.$app.$def
-    const {data} = await $appDef.$http.get(`/ensentence/index?key=${$appDef.key}`)
+    // prompt.showToast({
+    //   message: $appDef.parseTime(Date.now(), '{y}-{m}-{d}')
+    // })
+    const {data} = await $appDef.$http.get(`/everyday/index?key=${$appDef.key}&rand=1&date=${$appDef.parseTime(Date.now(), '{y}-{m}-{d}')}`)
     if(data.code === 200) {
       this.newsList = data.newslist
     }
   },
   onShow() {
   },
+  clickPress(item, e) {
+    media.previewImage({
+      current: item.imgurl,
+      uris: [
+        item.imgurl
+      ],
+      success: function() {
+        console.log('preview success')
+      },
+      fail: function(data, code) {
+        console.log('preview fail, code = ${code}')
+      }
+    })
+  },
   longPress(item, e) {
     clipboard.set({
-      text: `${item.en}\n${item.zh}`,
+      text: `${item.content}\n${item.note}`,
       success () {
         prompt.showToast({
           message: '复制成功'
@@ -47,7 +66,7 @@ export default Custom_page({
     }
     //   原生广告
     this.nativeAd = ad.createNativeAd({
-        adUnitId: 'f9beec05c09d4575b689c2c094ef25b7'
+        adUnitId: '710f447121654edd9b3fadc32e8e3e8e'
     })
     this.nativeAd.load()
     this.nativeAd.onLoad((res) => {
@@ -80,7 +99,7 @@ export default Custom_page({
   insertAd() {
     if(ad.createInterstitialAd) {
       this.interstitialAd = ad.createInterstitialAd({
-          adUnitId: '6725456cd28d46f18f94bee23e748936'
+          adUnitId: 'c734f27e9733409a88ff2160229c5c25'
       })
       this.interstitialAd.onLoad(()=> {
           this.interstitialAd.show();
@@ -92,5 +111,12 @@ export default Custom_page({
   },
   closeModal() {
       this.modalShow = false
+  },
+  playAudio() {
+    const tts = this.newsList[0].tts
+    if(tts) {
+      audio.src = this.newsList[0].tts
+      audio.play()
+    }
   }
 })

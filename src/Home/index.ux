@@ -10,22 +10,27 @@
     <div class="main">
       <div class="content">
         <block for="{{item in newsList}}">
-          <list class="content-item" onlongpress="longPress(item)">
-            <list-item type="content-reply" class="content__reply">
-              <text class="time">{{dateNow}}</text>
-              <text>{{item.en}}</text>
-              <text>{{item.zh}}</text>
-            </list-item>
-          </list>
-          <div class="content__copy" onlongpress="longPress(item)">
+          <div class="content-item" onlongpress="longPress(item)" onclick="clickPress(item)">
+            <image class="content__item__img" src="{{item.imgurl}}"></image>
+          </div>
+          <div class="content__copy">
             <image src="/Common/copy-icon.png" class="content__copy__icon"></image>
-            <text class="content__copy__text">长按进行复制</text>
+            <div class="content__copy__text">
+              <text>长按图片复制文本</text>
+              <text>点击图片预览保存</text>
+            </div>
           </div>
         </block>
       </div>
-      <div class="recharge-btn" onclick="getData">
-        <image class="recharge__icon" src="/Common/change-icon.png"></image>
-        <text class="recharge__text">换一句</text>
+      <div class="btns">
+        <div class="recharge-btn" onclick="playAudio">
+          <image class="recharge__icon audio-icon" src="/Common/audio.png"></image>
+          <text class="recharge__text">播放</text>
+        </div>
+        <div class="recharge-btn" onclick="getData">
+          <image class="recharge__icon" src="/Common/change-icon.png"></image>
+          <text class="recharge__text">换一句</text>
+        </div>
       </div>
       <div class="footer-ad" if="{{footerAdShow}}" onclick="reportAdClick" onappear="reportAdShow">
         <div class="footer-ad__img">

@@ -1,8 +1,8 @@
 {
   "package": "com.meihaoyingyu.package",
   "name": "美好英语",
-  "versionName": "1.0.1",
-  "versionCode": "1",
+  "versionName": "1.0.3",
+  "versionCode": "3",
   "minPlatformVersion": "1060",
   "icon": "/Common/logo.png",
   "features": [
@@ -17,7 +17,9 @@
     },
     { "name": "system.fetch" },
     { "name": "system.clipboard" },
-    {"name":"service.ad"}
+    {"name":"service.ad"},
+    { "name": "system.audio" },
+    { "name": "system.media" }
   ],
   "permissions": [
     {

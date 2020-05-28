@@ -3,60 +3,42 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    padding-bottom: 100px;
   }
   .title {
-    position: absolute;
     width: 100%;
-    top: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 180px;
+    margin-top: 50px;
   }
   .title__icon {
-      height: 90px;
+      height: 60px;
+      margin-bottom: 10px;
   }
   .title__sub-icon {
-      position: absolute;
-      top: 120px;
-      height: 50px;
-  }
-  .title text {
-      font-size: 90px;
-      font-weight: bold;
-      color: #fff;
-      font-family: 'ZhenyanGB-Regular';
-  }
-  .title__image {
-      width: 220px;
+      height: 30px;
   }
   .main {
-    margin-top: 420px;
+    /* margin-top: 420px; */
     display: flex;
     flex-direction: column;
-    padding: 0 50px;
+    /* padding: 0 50px; */
   }
   .content {
     display: flex;
     flex-direction: column;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    /* border-radius: 20px 20px 0 0; */
   }
   .content-item {
     display: flex;
     flex-direction: column;
-    padding: 20px 50px;
-    opacity: 0.93;
-    height: 500px;
-    /* border-radius: 20px 20px 0 0; */
-    background-color: #fff;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    justify-content: center;
   }
-  .content__reply {
-    display: flex;
-    flex-direction: column;
+  .content__item__img {
+      width: 90%;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
   }
   .content__reply text {
     font-size: 28px;
@@ -67,21 +49,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    opacity: 0.93;
+    margin: 20px 0;
   }
   .content__copy__icon {
       width: 26px;
       height: 30px;
   }
   .content__copy__text {
+      width: 90%;
+      margin-top: 5px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+  }
+  .content__copy__text text {
       font-size: 28px;
       color: #C2C2C2;
-      margin-top: 5px;
   }
-
   .recharge-btn {
       height: 86px;
       width: 320px;
@@ -91,11 +75,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 75px;
+      /* margin-top: 75px; */
   }
   .recharge__icon {
       width: 28px;
       height: 26px;
+  }
+  .audio-icon {
+      width: 36px;
+      height: 36px;
   }
   .recharge__text {
       font-size: 32px;
@@ -190,4 +178,20 @@
   .content__reply .time {
       color: #999;
       margin-bottom: 10px;
+  }
+
+  .en {
+      margin-bottom: 30px;
+  }
+  .content-text {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      align-items: center;
+  }
+  .content-text__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
   }
