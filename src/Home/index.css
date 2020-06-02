@@ -64,7 +64,8 @@
   }
   .content__copy__text text {
       font-size: 28px;
-      color: #C2C2C2;
+      /* color: #C2C2C2; */
+      color: #fff;
   }
   .recharge-btn {
       height: 86px;
